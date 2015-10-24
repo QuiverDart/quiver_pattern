@@ -12,23 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-library quiver.iterables.cycle_test;
+library quiver.pattern_test;
 
 import 'package:test/test.dart';
-import 'package:quiver/iterables.dart';
+import 'package:quiver_pattern/regexp.dart';
+
+final _specialRegExpChars = r'\^$.|+[](){}';
 
 main() {
-  group('cycle', () {
-    test("should create an empty iterable given an empty iterable", () {
-      expect(cycle([]), []);
-      expect(cycle([]).isEmpty, true);
-      expect(cycle([]).isNotEmpty, false);
-    });
-
-    test("should cycle its argument", () {
-      expect(cycle([1, 2, 3]).take(7), [1, 2, 3, 1, 2, 3, 1]);
-      expect(cycle([1, 2, 3]).isEmpty, false);
-      expect(cycle([1, 2, 3]).isNotEmpty, true);
+  group('escapeRegExp', () {
+    test('should escape special characters', () {
+      for (var c in _specialRegExpChars.split('')) {
+        expect(escapeRegExp(c), '\\$c');
+      }
     });
   });
 }

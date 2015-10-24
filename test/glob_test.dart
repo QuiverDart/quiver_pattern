@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-library quiver.patttern.glob_test;
+library quiver.pattern.glob.test;
 
 import 'package:test/test.dart';
-import 'package:quiver/pattern.dart';
+import 'package:quiver_pattern/glob.dart';
 
 main() {
   group('Glob', () {
