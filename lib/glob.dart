@@ -12,7 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-part of quiver.pattern;
+library quiver.pattern.glob;
+
+import 'regexp.dart';
 
 // TODO(justin): add more detailed documentation and explain how matching
 // differs or is similar to globs in Python and various shells.
@@ -56,7 +58,7 @@ RegExp _regexpFromGlobPattern(String pattern) {
   var chars = pattern.split('');
   for (var i = 0; i < chars.length; i++) {
     var c = chars[i];
-    if (_specialChars.hasMatch(c)) {
+    if (specialRegExpChars.hasMatch(c)) {
       sb.write('\\$c');
     } else if (c == '*') {
       if ((i + 1 < chars.length) && (chars[i + 1] == '*')) {

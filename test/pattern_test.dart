@@ -15,19 +15,9 @@
 library quiver.pattern_test;
 
 import 'package:test/test.dart';
-import 'package:quiver/pattern.dart';
-
-final _specialChars = r'\^$.|+[](){}';
+import 'package:quiver_pattern/pattern.dart';
 
 main() {
-  group('escapeRegex', () {
-    test('should escape special characters', () {
-      for (var c in _specialChars.split('')) {
-        expect(escapeRegex(c), '\\$c');
-      }
-    });
-  });
-
   group('matchesAny', () {
     test('should match multiple include patterns', () {
       expectMatch(matchAny(['a', 'b']), 'a', 0, ['a']);
