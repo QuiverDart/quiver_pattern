@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-library quiver.pattern_test;
+library quiver.regexp_test;
 
 import 'package:test/test.dart';
 import 'package:quiver_pattern/regexp.dart';
