@@ -12,16 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * This library contains utilities for working with [Pattern]s.
- */
+/// This library contains utilities for working with [Pattern]s.
 library quiver.pattern;
 
-/**
- * Returns a [Pattern] that matches against every pattern in [include] and
- * returns all the matches. If the input string matches against any pattern in
- * [exclude] no matches are returned.
- */
+/// Returns a [Pattern] that matches against every pattern in [include] and
+/// returns all the matches. If the input string matches against any pattern in
+/// [exclude] no matches are returned.
 Pattern matchAny(Iterable<Pattern> include, {Iterable<Pattern> exclude}) =>
     new _MultiPattern(include, exclude: exclude);
 
@@ -56,10 +52,8 @@ class _MultiPattern extends Pattern {
   }
 }
 
-/**
- * Returns true if [pattern] has a single match in [str] that matches the whole
- * string, not a substring.
- */
+/// Returns true if [pattern] has a single match in [str] that matches the whole
+/// string, not a substring.
 bool matchesFull(Pattern pattern, String str) {
   var match = pattern.matchAsPrefix(str);
   return match != null && match.end == str.length;

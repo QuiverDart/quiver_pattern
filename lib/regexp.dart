@@ -12,21 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * This library contains utilities for working with [RegExp]s.
- */
+/// This library contains utilities for working with [RegExp]s.
 library quiver.pattern.regexp;
 
 // From the PatternCharacter rule here:
 // http://ecma-international.org/ecma-262/5.1/#sec-15.10
 final specialRegExpChars = new RegExp(r'([\\\^\$\.\|\+\[\]\(\)\{\}])');
 
-/**
- * Escapes special regular exppression characters in [str] so that it can be
- * used as a literal match inside of a [RegExp].
- *
- * The special characters are: \ ^ $ . | + [ ] ( ) { }
- * as defined here: http://ecma-international.org/ecma-262/5.1/#sec-15.10
- */
+/// Escapes special regular exppression characters in [str] so that it can be
+/// used as a literal match inside of a [RegExp].
+///
+/// The special characters are: \ ^ $ . | + [ ] ( ) { }
+/// as defined here: http://ecma-international.org/ecma-262/5.1/#sec-15.10
 String escapeRegExp(String str) => str.splitMapJoin(specialRegExpChars,
     onMatch: (Match m) => '\\${m.group(0)}', onNonMatch: (s) => s);
