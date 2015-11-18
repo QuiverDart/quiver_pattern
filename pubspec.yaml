@@ -12,7 +12,7 @@ authors:
 - Sean Eagan <seaneagan1@gmail.com>
 - Victor Berchet <victor@suumit.com>
 description: A set of utility libraries for Dart
-homepage: https://github.com/google/quiver-dart
+homepage: https://github.com/QuiverDart/quiver_pattern
 environment:
   sdk: '>=1.8.0 <2.0.0'
 dev_dependencies:
